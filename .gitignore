@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 # My stuff
-./todo-list-md
+todo-list.md
+node_modules
