@@ -1,10 +1,8 @@
-function WelcomePage({
-  setCount,
-  count,
-}: {
-  setCount: React.Dispatch<React.SetStateAction<number>>;
-  count: number;
-}) {
+import { useState } from "react";
+
+function WelcomePage() {
+  const [count, setCount] = useState(0);
+
   return (
     <>
       <h1>This is the title for Welcome Page</h1>
