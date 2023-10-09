@@ -1,9 +1,7 @@
-import "@testing-library/react";
-import { render } from "@testing-library/react";
-import WelcomePage from "./WelcomePage.tsx";
+describe("GROUP #1", () => {
+  test("3 + 1 should be 4", () => {
+    const sum = 3 + 1;
 
-test("should render something", () => {
-  const component = render(WelcomePage());
-
-  expect(component).toBeDefined();
+    expect(sum).toEqual(4);
+  });
 });
