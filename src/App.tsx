@@ -4,7 +4,11 @@ import "./App.css";
 function App() {
   // const [count, setCount] = useState(0);
 
-  return <WelcomePage />;
+  return (
+    <>
+      <WelcomePage />
+    </>
+  );
 }
 
 export default App;
