@@ -12,6 +12,7 @@ describe("GROUP #1", () => {
     component = render(<WelcomePage />);
   });
 
+  describe("Name of the group", () => {});
   test("3 + 1 should be 4", () => {
     const sum = 3 + 1;
 
@@ -19,7 +20,7 @@ describe("GROUP #1", () => {
   });
 
   test("Component should render", () => {
-    // console.log(component);
+    console.log(prettyDOM(component.container));
     expect(component).toBeDefined();
   });
 
@@ -27,24 +28,16 @@ describe("GROUP #1", () => {
     console.log(screen.queryByText(/"branch"/i));
     expect(component.queryByText(/"branch"/i)).toBeDefined();
 
-    /*     
-    STUDY & RESEARCH if this giving me "null" it's correct
+    /*  STUDY & RESEARCH if this giving me "null" it's correct
     console.log(screen.queryByText(/"branch"/i));
     expect(screen.queryByText(/"branch"/i)).toBeDefined(); */
 
     expect(component.container).toHaveTextContent(
       "This has been a test to another branch"
     );
+  });
 
-    /*     console.log(component.container);
-   expect(component.container).toHaveTextContent(
-     "This has been a test to another branh"
-   ); 
-   
-   Notice that I misspelled the sentenc above in correctly on purposed. It's supper interesting how 
-   "component.container" 
-   */
-
+  test("should read the text inside the component, in a different way", () => {
     component.getByText("This has been a test to another branch");
     // Careful!! "getByText" apparently takes the WHOLE sentence. Even if you try to do a /"branch"/
     // it will thrown an error. The complete sentence you are looking for must be passed
