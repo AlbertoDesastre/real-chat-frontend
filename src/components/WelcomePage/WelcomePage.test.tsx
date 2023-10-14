@@ -1,10 +1,17 @@
 // import { render } from "react-dom";
 import "@testing-library/jest-dom"; // this provides the jest "expect" to have more matches regarding DOM
-import { render, screen } from "@testing-library/react";
+import { RenderResult, render, screen } from "@testing-library/react";
+
 import WelcomePage from "./WelcomePage";
 import { prettyDOM } from "@testing-library/react";
 
 describe("GROUP #1", () => {
+  let component: RenderResult;
+
+  beforeAll(() => {
+    component = render(<WelcomePage />);
+  });
+
   test("3 + 1 should be 4", () => {
     const sum = 3 + 1;
 
@@ -12,15 +19,11 @@ describe("GROUP #1", () => {
   });
 
   test("Component should render", () => {
-    const component = render(<WelcomePage />);
-
     // console.log(component);
     expect(component).toBeDefined();
   });
 
   test("should read the text inside the component", () => {
-    const component = render(<WelcomePage />);
-
     console.log(screen.queryByText(/"branch"/i));
     expect(component.queryByText(/"branch"/i)).toBeDefined();
 
@@ -54,8 +57,6 @@ describe("GROUP #1", () => {
   });
 
   test("should render one of the HTML tags correctly", () => {
-    const component = render(<WelcomePage />);
-
     const button = component.container.querySelector("button");
     console.log(prettyDOM(button as HTMLElement));
   });
