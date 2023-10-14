@@ -5,6 +5,8 @@ const bananaCounterSlice = createSlice({
   name: "bananaCounterSlice",
   initialState: { value: 0 },
   reducers: {
+    // note that, "incremented" it's the action, or the name of the action in a common plain Redux code, and the very next function would be their "reducer"
+    // RTK automatically creates the reducer based on the action provided on "createSlice"
     incremented: (bananas) => {
       bananas.value += 1;
     },
