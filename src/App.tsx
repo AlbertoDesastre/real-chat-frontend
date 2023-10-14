@@ -1,5 +1,5 @@
 import WelcomePage from "./components/WelcomePage/WelcomePage";
-import "./App.css";
+import Banana from "./components/Banana/Banana";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       <WelcomePage />
+      <Banana />
     </>
   );
 }
