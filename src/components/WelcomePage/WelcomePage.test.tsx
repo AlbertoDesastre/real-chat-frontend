@@ -27,11 +27,19 @@ describe("Welcome Page", () => {
       ).toBeDefined();
     });
 
-    test("should render one of the HTML tags correctly", () => {
+    test("should find a specific WORD inside a longer text", () => {
       // const component = render(<WelcomePage />);
 
-      const button = component.container.querySelector("button");
-      console.log(prettyDOM(button as HTMLElement));
+      console.log(prettyDOM(component.queryByText(/branch/i) as HTMLElement));
+      expect(component.queryByText(/branch/i)).toBeDefined();
+    });
+
+    test("should render one of the HTML tags correctly", () => {
+      // const component = render(<WelcomePage />);
+      expect(component.container.querySelector("button")).toBeDefined;
+
+      /*     const button = component.container.querySelector("button");
+      console.log(prettyDOM(button as HTMLElement)); */
     });
   });
 });
