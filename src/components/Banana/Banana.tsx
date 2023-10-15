@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   bananaStore,
   incremented,
@@ -6,15 +7,16 @@ import {
 } from "./BananaReducer";
 
 function Banana() {
+  const [bananas, setBananas] = useState(bananaStore.getState().value);
+
   bananaStore.subscribe(() => {
-    console.log(bananaStore.getState().value);
+    console.log("this is the new state --> ", bananaStore.getState().value);
+    setBananas(bananaStore.getState().value);
   });
 
   return (
     <>
-      <h2>
-        You have an amazing amount of {bananaStore.getState().value} bananas!
-      </h2>
+      <h2>You have an amazing amount of {bananas} bananas!</h2>
       <button
         onClick={() => {
           bananaStore.dispatch(incremented());
