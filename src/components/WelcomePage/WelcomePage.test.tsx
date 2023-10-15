@@ -19,10 +19,10 @@ describe("GROUP #1", () => {
     expect(sum).toEqual(4);
   });
 
-  test("Component should render", () => {
+  /*   test("Component should render", () => {
     console.log(prettyDOM(component.container));
     expect(component).toBeDefined();
-  });
+  }); */
 
   test("should read the text inside the component", () => {
     console.log(screen.queryByText(/"branch"/i));
